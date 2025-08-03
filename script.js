@@ -42,13 +42,14 @@ function drawCar() {
 }
 
 function update() {
-  if (keys["ArrowLeft"] && car.x > 0) {
+  if ((keys["ArrowLeft"] || keys["a"] || keys["A"]) && car.x > 0) {
     car.x -= car.speed;
   }
-  if (keys["ArrowRight"] && car.x + car.width < canvas.width) {
+  if ((keys["ArrowRight"] || keys["d"] || keys["D"]) && car.x + car.width < canvas.width) {
     car.x += car.speed;
   }
 }
+
 
 function gameLoop() {
   drawRoad();
